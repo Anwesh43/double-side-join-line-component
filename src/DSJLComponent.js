@@ -1,10 +1,10 @@
 import React from 'react'
 import { useStyle } from './hooks'
 
-const Line = ({style) => {
+const Line = ({style}) => {
     
     return (
-      <div style = {getLineStyle(i)}>
+      <div style = {style}>
       </div>
     )
 }

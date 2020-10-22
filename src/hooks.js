@@ -17,7 +17,7 @@ export const useAnimatedScale = (scGap = 0.02, delay = 20) => {
                 var currScale = scale 
                 setAnimated(true)
                 const interval = setInterval(() => {
-                    currScale += scGap * delay
+                    currScale += scGap 
                     setScale(currScale)
                     if (currScale > 1) { 
                         setScale(0)
@@ -31,8 +31,8 @@ export const useAnimatedScale = (scGap = 0.02, delay = 20) => {
 }
 
 export const useDimension = () => {
-    const [w, setW] = window.innerWidth 
-    const [h, setH] = window.innerHeight 
+    const [w, setW] = useState(window.innerWidth)
+    const [h, setH] = useState(window.innerHeight)
     useEffect(() => {
         window.onresize = () => {
             setW(window.innerWidth)
@@ -62,7 +62,8 @@ export const useStyle = (w, h, scale) => {
             const left = `${(w - size) * (1 - sf1) * i}px`
             const width = `${size + (w - size) * sf1}px`
             const height = `${lineH}px`
-            return {position, background,let, top, left, width, height}
+            const top = `${y + (size - lineH) * i}px`
+            return {position, background,left, top, left, width, height}
         },
 
         getBarFillStyle() {

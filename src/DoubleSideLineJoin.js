@@ -6,9 +6,10 @@ import {
 } from './hooks'
 
 const DoubleSideLineJoin = (props) => {
-    const {scale, start} = useAnimatedScale(0.02, 20)
+    const {scale, start} = useAnimatedScale(0.01, 20)
     const {w, h} = useDimension()
     return <div>
-        <DSLJComponent w = {w} scale = {scale} h = {h} onClick = {start()}></DSLJComponent>
+        <DSLJComponent w = {w} scale = {scale} h = {h} onClick = {start}></DSLJComponent>
     </div>
 }
+export default DoubleSideLineJoin
